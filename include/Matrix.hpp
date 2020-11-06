@@ -39,6 +39,7 @@ class Matrix {
    void resize(int rows, int cols);
 
    bool is_good_pos(int row, int col) const;
+   bool assert_good_pos(int row, int col) const;
 
 
  
@@ -70,13 +71,13 @@ T Matrix<T>::operator()(int row, int col) const {
 
 template <class T>
 T  Matrix<T>::get_copy_of(int row, int col) const {
-  assert(is_good_pos(row,col));
+  assert_good_pos(row,col);
   return grid_[row][col];
 }
 
 template <class T>
 T& Matrix<T>::at(int row, int col) {
-  assert(is_good_pos(row,col));
+  assert(assert_good_pos(row,col));
   return grid_[row][col];
 }
 
@@ -97,6 +98,15 @@ bool Matrix<T>::is_good_pos(int row, int col) const {
   bool col_ok_up = col < cols_num();
 
   return row_ok_down && row_ok_up && col_ok_down && col_ok_up;
+}
+
+template <class T>
+bool Matrix<T>::assert_good_pos(int row, int col) const {
+  assert(row >= 0);
+  assert(row < rows_num());
+  assert(col >= 0);
+  assert(col < cols_num());
+  return true;
 }
 
 template <class T>

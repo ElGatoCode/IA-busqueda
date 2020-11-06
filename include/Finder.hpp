@@ -10,8 +10,8 @@ struct compare {
     return a->f_ > b->f_;
   }
 };
-typedef priority_queue<Node*, vector<Node*>, compare> min_heap;
 
+typedef priority_queue<Node*, vector<Node*>, compare> min_heap;
 
 class Finder {
  public:
@@ -20,9 +20,7 @@ class Finder {
 
   
    bool find_path(int row1, int col1, int row2, int col2);
-   void update_heap(min_heap& heap);
    void draw_path(Node* goal);
-   void destroy_heap(min_heap& heap);
 
  private:
    Board* board_;

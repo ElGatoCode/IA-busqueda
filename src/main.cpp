@@ -18,11 +18,16 @@ int main(void) {
   cout << "Cols > "; cin >> cols;
   cout << "Obstacles > "; cin >> obstacles;
   coordinates A, B;
-  A.row = 0;
-  A.col = 0;
+  int a_row, a_col, b_row, b_col;
 
-  B.row = rows - 1;
-  B.col  = cols - 1;
+  cout << "A coordinates > "; cin >> a_row >> a_col;
+  cout << "B coordinates > "; cin >> b_row >> b_col;
+
+  A.row = a_row;
+  A.col = a_col;
+
+  B.row = b_row;
+  B.col  = b_col;
 
   Board parking_lot(rows,cols);
 

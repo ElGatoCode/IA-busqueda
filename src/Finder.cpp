@@ -23,7 +23,6 @@ bool Finder::find_path(int row1, int col1, int row2, int col2) { // A* search
   if (board_->get_node_at(row2,col2).type_ == obstacle_)
     return false;
 
-  //min_heap open_list;
   list<Node*> open_list;
 
   Heuristic* heuristic = new Manhattan();
@@ -41,10 +40,6 @@ bool Finder::find_path(int row1, int col1, int row2, int col2) { // A* search
 
   while (!open_list.empty()) {
   list<Node*>::iterator min_index = open_list.begin(), it;
-  // if (open_list.size() > 4) {
-  //   for (int i = 0;  i < 4; i++)
-  //     it--;
-  // }
 
     for (it = min_index; it != open_list.end(); it++)
       if ((*it)->f_ < (*min_index)->f_)
@@ -80,37 +75,10 @@ bool Finder::find_path(int row1, int col1, int row2, int col2) { // A* search
     }
   }
   //No solution
-  cout << "\nNosol:(\n";
+  cout << "\nNo solution :(\n";
   delete heuristic;
   return false;
 }
-
-
-void Finder::update_heap(min_heap& heap) { //Ordena solo el primer elemento mal puesto
-  if (heap.empty() || heap.size() == 1)
-    return;
-  
-  Node* up = heap.top(), *down;
-  heap.pop();
-  down = heap.top();
-  heap.pop();
-
-  vector<Node*> aux_vec;
-  while (!heap.empty() && !compare()(up, down)) {
-    aux_vec.push_back(up);
-    aux_vec.push_back(down);
-    up = down;
-    down = heap.top();
-    heap.pop();
-  }
-  if (!compare()(up,down))
-    aux_vec.push_back(down);
-  for (auto item : aux_vec)
-    heap.push(item);
-}
-
-
-
 
 
 void Finder::draw_path(Node* goal) {
@@ -122,6 +90,5 @@ void Finder::draw_path(Node* goal) {
     node->type_ = stepped_;
     node = node->parent_;
   }
-
 }
 
