@@ -1,0 +1,12 @@
+digraph "Graphical Class Hierarchy"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node0 [label="Heuristic",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classHeuristic.html",tooltip=" "];
+  Node0 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 [label="Manhattan",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classManhattan.html",tooltip=" "];
+  Node0 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Pythagorean",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classPythagorean.html",tooltip=" "];
+}

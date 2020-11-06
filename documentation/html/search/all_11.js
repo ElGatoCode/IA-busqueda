@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['void_5ftype_152',['void_type',['../structCatch_1_1detail_1_1void__type.html',1,'Catch::detail']]]
+  ['unaryexpr_160',['UnaryExpr',['../classCatch_1_1UnaryExpr.html',1,'Catch']]],
+  ['unorderedequalsmatcher_161',['UnorderedEqualsMatcher',['../structCatch_1_1Matchers_1_1Vector_1_1UnorderedEqualsMatcher.html',1,'Catch::Matchers::Vector']]],
+  ['usecolour_162',['UseColour',['../structCatch_1_1UseColour.html',1,'Catch']]]
 ];

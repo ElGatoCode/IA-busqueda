@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Parking lot game - AI: /home/alejo/Documents/github-me/AI-parking-lot/cpp_imp/testing/catch.hpp Source File</title>
+<title>Parking lot game - AI: /home/alejo/Documents/univ/3ero/IA/IA-busqueda/testing/catch.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -5824,9 +5824,9 @@ $(function() {
 <div class="line"><a name="l05795"></a><span class="lineno"> 5795</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> DerivedT&gt;</div>
 <div class="line"><a name="l05796"></a><span class="lineno"> 5796</span>&#160;    <span class="keyword">struct </span>CumulativeReporterBase : IStreamingReporter {</div>
 <div class="line"><a name="l05797"></a><span class="lineno"> 5797</span>&#160;        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> ChildNodeT&gt;</div>
-<div class="line"><a name="l05798"></a><span class="lineno"> 5798</span>&#160;        <span class="keyword">struct </span>Node {</div>
-<div class="line"><a name="l05799"></a><span class="lineno"> 5799</span>&#160;            <span class="keyword">explicit</span> Node( T <span class="keyword">const</span>&amp; _value ) : value( _value ) {}</div>
-<div class="line"><a name="l05800"></a><span class="lineno"> 5800</span>&#160;            <span class="keyword">virtual</span> ~Node() {}</div>
+<div class="line"><a name="l05798"></a><span class="lineno"> 5798</span>&#160;        <span class="keyword">struct </span><a class="code" href="classNode.html">Node</a> {</div>
+<div class="line"><a name="l05799"></a><span class="lineno"> 5799</span>&#160;            <span class="keyword">explicit</span> <a class="code" href="classNode.html">Node</a>( T <span class="keyword">const</span>&amp; _value ) : value( _value ) {}</div>
+<div class="line"><a name="l05800"></a><span class="lineno"> 5800</span>&#160;            <span class="keyword">virtual</span> ~<a class="code" href="classNode.html">Node</a>() {}</div>
 <div class="line"><a name="l05801"></a><span class="lineno"> 5801</span>&#160; </div>
 <div class="line"><a name="l05802"></a><span class="lineno"> 5802</span>&#160;            <span class="keyword">using</span> ChildNodes = std::vector&lt;std::shared_ptr&lt;ChildNodeT&gt;&gt;;</div>
 <div class="line"><a name="l05803"></a><span class="lineno"> 5803</span>&#160;            T value;</div>
@@ -5865,9 +5865,9 @@ $(function() {
 <div class="line"><a name="l05836"></a><span class="lineno"> 5836</span>&#160;            SectionInfo <span class="keyword">const</span>&amp; m_other;</div>
 <div class="line"><a name="l05837"></a><span class="lineno"> 5837</span>&#160;        };</div>
 <div class="line"><a name="l05838"></a><span class="lineno"> 5838</span>&#160; </div>
-<div class="line"><a name="l05839"></a><span class="lineno"> 5839</span>&#160;        <span class="keyword">using</span> TestCaseNode = Node&lt;TestCaseStats, SectionNode&gt;;</div>
-<div class="line"><a name="l05840"></a><span class="lineno"> 5840</span>&#160;        <span class="keyword">using</span> TestGroupNode = Node&lt;TestGroupStats, TestCaseNode&gt;;</div>
-<div class="line"><a name="l05841"></a><span class="lineno"> 5841</span>&#160;        <span class="keyword">using</span> TestRunNode = Node&lt;TestRunStats, TestGroupNode&gt;;</div>
+<div class="line"><a name="l05839"></a><span class="lineno"> 5839</span>&#160;        <span class="keyword">using</span> TestCaseNode = <a class="code" href="classNode.html">Node&lt;TestCaseStats, SectionNode&gt;</a>;</div>
+<div class="line"><a name="l05840"></a><span class="lineno"> 5840</span>&#160;        <span class="keyword">using</span> TestGroupNode = <a class="code" href="classNode.html">Node&lt;TestGroupStats, TestCaseNode&gt;</a>;</div>
+<div class="line"><a name="l05841"></a><span class="lineno"> 5841</span>&#160;        <span class="keyword">using</span> TestRunNode = <a class="code" href="classNode.html">Node&lt;TestRunStats, TestGroupNode&gt;</a>;</div>
 <div class="line"><a name="l05842"></a><span class="lineno"> 5842</span>&#160; </div>
 <div class="line"><a name="l05843"></a><span class="lineno"> 5843</span>&#160;        CumulativeReporterBase( ReporterConfig <span class="keyword">const</span>&amp; _config )</div>
 <div class="line"><a name="l05844"></a><span class="lineno"> 5844</span>&#160;        :   m_config( _config.fullConfig() ),</div>
@@ -17907,6 +17907,7 @@ $(function() {
 <div class="ttc" id="aclassCatch_1_1BinaryExpr_html"><div class="ttname"><a href="classCatch_1_1BinaryExpr.html">Catch::BinaryExpr</a></div><div class="ttdef"><b>Definition:</b> catch.hpp:2219</div></div>
 <div class="ttc" id="astructCatch_1_1pluralise_html"><div class="ttname"><a href="structCatch_1_1pluralise.html">Catch::pluralise</a></div><div class="ttdef"><b>Definition:</b> catch.hpp:3211</div></div>
 <div class="ttc" id="astructCatch_1_1Matchers_1_1Vector_1_1UnorderedEqualsMatcher_html"><div class="ttname"><a href="structCatch_1_1Matchers_1_1Vector_1_1UnorderedEqualsMatcher.html">Catch::Matchers::Vector::UnorderedEqualsMatcher</a></div><div class="ttdef"><b>Definition:</b> catch.hpp:3712</div></div>
+<div class="ttc" id="aclassNode_html"><div class="ttname"><a href="classNode.html">Node</a></div><div class="ttdef"><b>Definition:</b> Node.hpp:16</div></div>
 <div class="ttc" id="aclassCatch_1_1ReusableStringStream_html"><div class="ttname"><a href="classCatch_1_1ReusableStringStream.html">Catch::ReusableStringStream</a></div><div class="ttdef"><b>Definition:</b> catch.hpp:1435</div></div>
 <div class="ttc" id="astructCatch_1_1IMutableRegistryHub_html"><div class="ttname"><a href="structCatch_1_1IMutableRegistryHub.html">Catch::IMutableRegistryHub</a></div><div class="ttdef"><b>Definition:</b> catch.hpp:2971</div></div>
 <div class="ttc" id="astructCatch_1_1Counts_html"><div class="ttname"><a href="structCatch_1_1Counts.html">Catch::Counts</a></div><div class="ttdef"><b>Definition:</b> catch.hpp:2824</div></div>
