@@ -13,6 +13,14 @@ const string INITIAL_SYM = "A";
 const string FINAL_SYM = "B";
 const string UNKNOWN_SYM = "?";
 
+// Símbolos para cargar desde fichero
+const string FREE_IN_SYM = FREE_SYM;
+const string OBSTACLE_IN_SYM = "#";
+const string STEPPED_IN_SYM = STEPPED_SYM;
+const string INITIAL_IN_SYM = INITIAL_SYM;
+const string FINAL_IN_SYM = FINAL_SYM;
+const string UNKNOWN_IN_SYM = UNKNOWN_SYM;
+
 class Node {
  public:
    Node(int row = 0, int col = 0, node_type type = free_);

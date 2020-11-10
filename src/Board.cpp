@@ -123,13 +123,13 @@ void Board::load_board(istream& is) {
       string sym;
       is >> sym;
 
-      if (sym == OBSTACLE_SYM)
+      if (sym == OBSTACLE_IN_SYM)
         set_obstacle_at(row,col);
-      else if (sym == STEPPED_SYM)
+      else if (sym == STEPPED_IN_SYM)
         set_stepped_at(row,col);   
-      else if (sym == INITIAL_SYM)
+      else if (sym == INITIAL_IN_SYM)
         set_init_point(row,col);
-      else if (sym == FINAL_SYM)
+      else if (sym == FINAL_IN_SYM)
         set_final_point(row,col);
       //else free o unknown
       

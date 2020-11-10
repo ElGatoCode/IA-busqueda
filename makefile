@@ -6,8 +6,8 @@ FLAGS=-g -std=c++11
 ################################################
 
 
-bin/main: bin/Board.o bin/Node.o bin/Finder.o src/main.cpp include/Matrix.hpp
-	$(CPP) $(FLAGS) src/main.cpp bin/Board.o bin/Node.o bin/Finder.o -o bin/main
+bin/search: bin/Board.o bin/Node.o bin/Finder.o src/search.cpp include/Matrix.hpp
+	$(CPP) $(FLAGS) src/search.cpp bin/Board.o bin/Node.o bin/Finder.o -o bin/search
 
 bin/Board.o: include/Board.hpp src/Board.cpp include/Matrix.hpp 
 	$(CPP) -c $(FLAGS) src/Board.cpp -o bin/Board.o
@@ -30,5 +30,3 @@ clean-o:
 
 #################################################
 
-testing/main-tests.o: testing/tests-main.cpp
-	$(CPP) -c $(FLAGS) testing/tests-main.cpp -o testing/main-tests.o
