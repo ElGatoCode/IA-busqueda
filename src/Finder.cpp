@@ -74,8 +74,8 @@ bool Finder::find_path(int row1, int col1, int row2, int col2) { // A* search
       }
     }
   }
+  
   //No solution
-  cout << "\nNo solution :(\n";
   delete heuristic;
   return false;
 }

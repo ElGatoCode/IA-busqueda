@@ -41,6 +41,7 @@ int main(int argc, char* argv[]) {
         infile = opts[++i];
     }
 
+    //Desde fichero
     if (infile != string("nonefile")) {
       ifstream in_board(infile);
       if (!in_board.is_open()) {
@@ -55,12 +56,14 @@ int main(int argc, char* argv[]) {
       coordinates A, B;
       A = parking_lot.init_point();
       B = parking_lot.final_point();
-      finder.find_path(A.row, A.col, B.row, B.col);
-      cout << endl << parking_lot << endl;
+      if (finder.find_path(A.row, A.col, B.row, B.col))
+        cout << endl << parking_lot << endl;
+        else
+        cout << endl << "Sin solución." << endl;
       return 0;
     }
 
-
+    //Desde línea de comandos
     a_row = 0;
     a_col = 0;
     b_row = rows - 1;
@@ -72,12 +75,16 @@ int main(int argc, char* argv[]) {
     board.fill_random_obstacles(obstacles);
     cout << board << endl << endl;
     Finder a_star(&board);
-    a_star.find_path(a_row, a_row, b_row, b_col);
-    cout << board << endl;
+    if (a_star.find_path(a_row, a_row, b_row, b_col))
+      cout << board << endl;
+      else 
+      cout << endl << "Sin solución" << endl;
 
     return 0;
   }
 
+
+  //Interactivo
   char start_search = 'n';
   while (start_search != 's' && start_search != 'S') {
 
@@ -118,9 +125,10 @@ int main(int argc, char* argv[]) {
     
     if (start_search != 'n' && start_search != 'N') {
       Finder finder(&parking_lot);
-      finder.find_path(A.row,A.col,B.row,B.col);
-      
-      cout << endl << parking_lot << endl;
+      if (finder.find_path(A.row,A.col,B.row,B.col))
+        cout << endl << parking_lot << endl;
+        else
+        cout << endl << "Sin solución" << endl;
     }
   }
 
