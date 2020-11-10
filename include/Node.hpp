@@ -6,12 +6,12 @@ using namespace std;
 
 enum node_type {free_, obstacle_, stepped_, initial_, final_};
 
-const char FREE_SYM = '-';
-const char OBSTACLE_SYM = '#';
-const char STEPPED_SYM = ':';
-const char INITIAL_SYM = 'A';
-const char FINAL_SYM = 'B';
-const char UNKNOWN_SYM = '?';
+const string FREE_SYM = "·";
+const string OBSTACLE_SYM = "█";
+const string STEPPED_SYM = ":";
+const string INITIAL_SYM = "A";
+const string FINAL_SYM = "B";
+const string UNKNOWN_SYM = "?";
 
 class Node {
  public:

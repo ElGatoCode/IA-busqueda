@@ -1,5 +1,6 @@
 #include "../include/Board.hpp"
 #include "../include/Finder.hpp"
+#include "../include/termcolor/termcolor.hpp"
 
 #include <iostream>
 #include <set>
@@ -19,7 +20,7 @@ int main(int argc, char* argv[]) {
   int obstacles = 0;
   bool random_obstacles = true;
   int a_row, a_col, b_row, b_col;
-
+ 
 
 
   if (argc > 1) {

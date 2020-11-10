@@ -46,16 +46,16 @@ ostream& operator<<(ostream& os, const Node* n) {
       os << FREE_SYM;
       break;
     case obstacle_:
-      os << OBSTACLE_SYM;
+      os << termcolor::red << OBSTACLE_SYM << termcolor::reset;
       break;
     case stepped_:
-      os << STEPPED_SYM;
+      os << termcolor::yellow << STEPPED_SYM << termcolor::reset;
       break;
     case initial_:
-      os << INITIAL_SYM;
+      os << termcolor::green << INITIAL_SYM << termcolor::reset;
       break;
     case final_:
-      os << FINAL_SYM;
+      os << termcolor::green << FINAL_SYM << termcolor::reset;
       break;
     default:
       os << UNKNOWN_SYM;
@@ -69,16 +69,16 @@ ostream& operator<<(ostream& os, const Node& n) {
       os << FREE_SYM;
       break;
     case obstacle_:
-      os << OBSTACLE_SYM;
+      os << termcolor::red << OBSTACLE_SYM << termcolor::reset;
       break;
     case stepped_:
-      os << STEPPED_SYM;
+      os << termcolor::yellow << STEPPED_SYM << termcolor::reset;
       break;
     case initial_:
-      os << INITIAL_SYM;
+      os << termcolor::green << INITIAL_SYM << termcolor::reset;
       break;
     case final_:
-      os << FINAL_SYM;
+      os << termcolor::green << FINAL_SYM << termcolor::reset;
       break;
     default:
       os << UNKNOWN_SYM;
