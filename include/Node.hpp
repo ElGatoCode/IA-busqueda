@@ -8,7 +8,7 @@ enum node_type {free_, obstacle_, stepped_, initial_, final_};
 
 const string FREE_SYM = "·";
 const string OBSTACLE_SYM = "█";
-const string STEPPED_SYM = ":";
+const string STEPPED_SYM = "X";
 const string INITIAL_SYM = "A";
 const string FINAL_SYM = "B";
 const string UNKNOWN_SYM = "?";

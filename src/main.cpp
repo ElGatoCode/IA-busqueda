@@ -26,6 +26,10 @@ int main(int argc, char* argv[]) {
   if (argc > 1) {
     vector<string> opts;
     string infile = "nonefile";
+    float p_to_fill = 0;
+    bool percentage = false;
+
+
     for (int i = 1; i < argc; i++)
       opts.push_back(string(argv[i]));
 
@@ -39,6 +43,10 @@ int main(int argc, char* argv[]) {
         obstacles = stoi(opts[++i]);
       else if (opts[i] == "-f" || opts[i] == "--file")
         infile = opts[++i];
+      else if (opts[i] == "-fp" || opts[i] == "--fillp") {
+        percentage = true;
+        p_to_fill = stof(opts[++i]);
+      }
     }
 
     //Desde fichero
@@ -72,7 +80,9 @@ int main(int argc, char* argv[]) {
     Board board(rows,cols);
     board.set_init_point(a_row,a_col);
     board.set_final_point(b_row,b_col);
-    board.fill_random_obstacles(obstacles);
+
+    percentage ? board.fill_prandom_obstacles(p_to_fill) : board.fill_random_obstacles(obstacles);
+    
     cout << board << endl << endl;
     Finder a_star(&board);
     if (a_star.find_path(a_row, a_row, b_row, b_col))

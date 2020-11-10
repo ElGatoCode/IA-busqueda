@@ -166,16 +166,21 @@ void Board::set_final_point(int row, int col) {
 
 
 
-// /**
-//  * Tiene que haber una solución siempre? no
-//  */
 
-void Board::fill_random_obstacles(int num_of) {
-  assert(num_of >= 0 && "Negative num of cells :(");
-  //assert((num_of < num_of_rows()* num_of_cols()) && "Fully?");
+/**
+ * \brief Cambia el type_ de "num_of" nodos (aleatoriamente posicionados) a "obstacle_". 
+ *        Se cambiarán todos los nodos posibles (excepto A y B) hasta llegar a num_of o 
+ *        hasta quedarse sin nodos free_
+ * \param num_of_cells Número de nodos a cambiar 
+ */
+void Board::fill_random_obstacles(int num_of) {  
   int row, col;
   srand(time(NULL));
-  while (num_of_obstacles() < num_of) {
+  int area = num_of_rows() *  num_of_cols();
+
+  num_of >= area - 2 ? num_of = area - 2 : num_of = num_of;
+
+  while (num_of_obstacles() < num_of ) {
     row = rand() % num_of_rows();
     col = rand() % num_of_cols(); 
     node_type current_type = get_node_at(row,col).type_;
@@ -184,11 +189,20 @@ void Board::fill_random_obstacles(int num_of) {
   }
 }
 
-// void Board::fill_prandom(float percentage, cell_state state) {
-//   assert(percentage >= 0.0 && percentage < 1.0 && "Bad percentage :(");
-//   fill_random(ceil(percentage * num_of_rows() * num_of_cols()), state);
-// }
-  
+
+
+/**
+ * \brief Igual que fill_random_obstacles pero usando porcentaje respecto al área 
+ *        para calcular los nodos a cambiar. Si percentaje >= 1 entonces se cambiarán
+ *        todos los nodos posibles (excepto A y B).
+ * \param percentage Porcentaje de nodos a camnbiar 
+ */ 
+void Board::fill_prandom_obstacles(float percentage) {
+  int num_of_obstacles = 0;
+  int area = num_of_rows() * num_of_cols();
+  percentage >= 1 ? num_of_obstacles = area - 2 : num_of_obstacles = percentage * area;
+  fill_random_obstacles(num_of_obstacles);
+}
 
   
    

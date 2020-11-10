@@ -44,37 +44,35 @@ class Board {
 
    Board& operator=(const Board& board);
    void load_board(istream& is = cin);
-  //  int num_of_obst(void) const;
+
   //  int num_of_stepped(void) const;
   //  int num_of_free(void) const;
   //  int cells_on_this_state(cell_state state) const;
-  //  cell_state get_state_of_cell(int row, int col) const;
-  //  bool is_goal(int row, int col);
 
 
    
 
-  //  void set_state_of_cell(int row, int col, cell_state state);
-  void set_init_point(int row, int col);
-  void set_final_point(int row, int col);
+
+   void set_init_point(int row, int col);
+   void set_final_point(int row, int col);
 
 
-  //  Cell& get_init_point(void);
-  //  Cell& get_final_point(void);
-  //  Cell get_cell(int row, int col) const;
 
   /**
-   * \brief Changes the state of "num_of_cells" cells (randomly placed) to "state"
-   * \param num_of_cells Number of cells to fill ( 0 <= num_of_cells < rows * cols)
-   * \param state New state of those cells 
+   * \brief Cambia el type_ de "num_of" nodos (aleatoriamente posicionados) a "obstacle_". 
+   *        Se cambiarán todos los nodos posibles (excepto A y B) hasta llegar a num_of o 
+   *        hasta quedarse sin nodos free_
+   * \param num_of_cells Número de nodos a cambiar 
    */
-  void fill_random_obstacles(int num_of);
-  
-  //  /**
-  //   * \brief Like fill_random but using percentage of cells in board
-  //   * \param percentage Percentage of cells to fill (0 <= percentage < 1)
-  //   */ 
-  //  void fill_prandom(float percentage, cell_state state);
+   void fill_random_obstacles(int num_of);
+
+  /**
+   * \brief Igual que fill_random_obstacles pero usando porcentaje respecto al área 
+   *        para calcular los nodos a cambiar. Si percentaje >= 1 entonces se cambiarán
+   *        todos los nodos posibles (excepto A y B).
+   * \param percentage Porcentaje de nodos a camnbiar 
+   */ 
+   void fill_prandom_obstacles(float percentage);
 
 
   //  void resize(int rows, int cols);
@@ -85,7 +83,6 @@ class Board {
  private:
 
    Matrix<Node>* grid_;
-   /** \brief Number of obstacles on board */
    int num_of_obstacles_; 
    coordinates init_point_;
    coordinates final_point_;
