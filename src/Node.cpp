@@ -1,5 +1,6 @@
 
 #include "../include/Node.hpp"
+#include "../include/termcolor/termcolor.hpp"
 
 #include <cassert>
 
