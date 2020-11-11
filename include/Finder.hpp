@@ -15,13 +15,7 @@
 #include <queue>
 #include <string>
 
-struct compare {
-  bool operator()(Node* a, Node* b) {
-    return a->f_ > b->f_;
-  }
-};
 
-typedef priority_queue<Node*, vector<Node*>, compare> min_heap;
 
 class Finder {
  public:
@@ -31,7 +25,9 @@ class Finder {
   
    bool find_path(coordinates start_pos, coordinates goal_pos, Heuristic* heuristic);
    void draw_path(Node* goal);
+   vector<Node*> closed_list(void);
 
  private:
    Board* board_;
+   vector<Node*> closed_list_;
 };

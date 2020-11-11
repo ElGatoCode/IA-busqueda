@@ -96,10 +96,12 @@ int main(int argc, char* argv[]) {
       A = parking_lot.init_point();
       B = parking_lot.final_point();
 
-      if (finder.find_path(A, B, heuristic))
+      if (finder.find_path(A, B, heuristic)) {
         cout << endl << parking_lot << endl;
-        else
+        cout << termcolor::green << "Costo del camino = " << termcolor::reset << parking_lot.get_node_at(B.row, B.col).g_ << endl;
+      } else {
         cout << endl << "Sin solución." << endl;
+      }
       return 0;
     }
 
@@ -129,10 +131,13 @@ int main(int argc, char* argv[]) {
     
     cout << board << endl << endl;
     Finder a_star(&board);
-    if (a_star.find_path(A, B, heuristic))
-      cout << board << endl;
-      else 
+    if (a_star.find_path(A, B, heuristic))  {
+      cout << board << endl; 
+      cout << termcolor::green << "Costo = " << termcolor::reset << board.get_node_at(B.row,B.col).g_ << endl;
+      cout << termcolor::green << "Nodos expandidos = " << termcolor::reset << a_star.closed_list().size() << endl;
+    } else {
       cout << endl << "Sin solución" << endl;
+    }
 
     return 0;
   }

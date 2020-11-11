@@ -22,6 +22,10 @@ Finder::~Finder(void) {
 
 }
 
+vector<Node*> Finder::closed_list(void) {
+  return closed_list_;
+}
+
 bool Finder::find_path(coordinates start_pos, coordinates goal_pos, Heuristic* heuristic) { // A* search
   if (board_ == nullptr)
     return false;
@@ -67,6 +71,8 @@ bool Finder::find_path(coordinates start_pos, coordinates goal_pos, Heuristic* h
     open_list.erase(min_index);
 
     m->is_closed_ = true;
+    closed_list_.push_back(m);
+
     neighbors = board_->get_neighbors_at(m->row_, m->col_);
     for (auto n : neighbors) {
       if(n->is_closed_)
