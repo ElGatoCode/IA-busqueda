@@ -1,4 +1,14 @@
+/**
+ * @author: Miguel Alejandro Martín Reyes
+ * email : alu0101209777@ull.edu.es
+ * @github: github.com/miguel-martinr
+ * @date  : 20201110
+ * @description: Clase que implementa un 'buscador' de caminos mínimos entre nodos.
+ * 
+ * @keywords: heuristic, A*, finder, AI, nodes, boards, game
+ */
 #pragma once
+
 #include "Board.hpp"
 #include "Heuristic.hpp"
 
@@ -19,7 +29,7 @@ class Finder {
    ~Finder(void);
 
   
-   bool find_path(int row1, int col1, int row2, int col2);
+   bool find_path(coordinates start_pos, coordinates goal_pos, Heuristic* heuristic);
    void draw_path(Node* goal);
 
  private:

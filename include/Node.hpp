@@ -1,3 +1,12 @@
+/**
+ * @author: Miguel Alejandro Martín Reyes
+ * email : alu0101209777@ull.edu.es
+ * @github: github.com/miguel-martinr
+ * @date  : 20201110
+ * @description: Clase que implementa un nodo.
+ * 
+ * @keywords: heuristic, A*, finder, AI, nodes, boards, game
+ */
 #pragma once
 
 #include <iostream>

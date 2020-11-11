@@ -1,10 +1,12 @@
 /**
+ * @author: Miguel Alejandro Martín Reyes
+ * email : alu0101209777@ull.edu.es
+ * @github: github.com/miguel-martinr
+ * @date  : 20201110
+ * @description: Plantilla de clase para implementar matrices de tipo genérico.
  * 
- * @author Miguel Martín
- * @date 20201015
+ * @keywords: heuristic, A*, finder, AI, nodes, boards, game
  */
-
-
 #pragma once
 
 #include <vector>

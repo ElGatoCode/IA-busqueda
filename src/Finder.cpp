@@ -1,3 +1,12 @@
+/**
+ * @author: Miguel Alejandro Martín Reyes
+ * email : alu0101209777@ull.edu.es
+ * @github: github.com/miguel-martinr
+ * @date  : 20201110
+ * @description: Clase que implementa un 'buscador' de caminos mínimos entre nodos.
+ * 
+ * @keywords: heuristic, A*, finder, AI, nodes, boards, game
+ */
 #include "../include/Finder.hpp"
 
 #include <list>
@@ -13,35 +22,38 @@ Finder::~Finder(void) {
 
 }
 
-bool Finder::find_path(int row1, int col1, int row2, int col2) { // A* search
+bool Finder::find_path(coordinates start_pos, coordinates goal_pos, Heuristic* heuristic) { // A* search
   if (board_ == nullptr)
     return false;
   
-  if (board_->get_node_at(row1,col1).type_ == obstacle_)
+  if (board_->get_node_at(start_pos.row, start_pos.col).type_ == obstacle_)
     return false;
   
-  if (board_->get_node_at(row2,col2).type_ == obstacle_)
+  if (board_->get_node_at(start_pos.row, start_pos.col).type_ == obstacle_)
     return false;
+  
+  if (heuristic == nullptr)
+    Heuristic* heuristic = new Manhattan();
+
+
 
   list<Node*> open_list;
 
-  Heuristic* heuristic = new Manhattan();
   vector<Node*> neighbors;
-  Node* s = board_->get_ptr_at(row1,col1);
-  Node* goal = board_->get_ptr_at(row2,col2);
+
+  Node* s = board_->get_ptr_at(start_pos.row, start_pos.col);
+  Node* goal = board_->get_ptr_at(goal_pos.row, goal_pos.col);
 
   s->g_ = 0;
   s->h_ = heuristic->calculate(s, goal);
   s->f_ = s->g_ + s->h_;
 
   open_list.push_front(s);
-  s->is_closed_ = false;
-
 
   while (!open_list.empty()) {
-  list<Node*>::iterator min_index = open_list.begin(), it;
 
-    for (it = min_index; it != open_list.end(); it++)
+  list<Node*>::iterator min_index = open_list.begin(), it;
+    for (it = min_index; it != open_list.end(); it++) //Buscar nodo con mínimo f
       if ((*it)->f_ < (*min_index)->f_)
         min_index = it;
 
@@ -49,7 +61,6 @@ bool Finder::find_path(int row1, int col1, int row2, int col2) { // A* search
 
     if (m == goal) {
       draw_path(m);
-      delete heuristic;
       return true;
     }
 
@@ -60,6 +71,7 @@ bool Finder::find_path(int row1, int col1, int row2, int col2) { // A* search
     for (auto n : neighbors) {
       if(n->is_closed_)
         continue;
+
       double cost = m->g_ + 1;
       if (!n->is_frontier_ || cost < n->g_) {
         n->g_ = cost;
@@ -74,9 +86,8 @@ bool Finder::find_path(int row1, int col1, int row2, int col2) { // A* search
       }
     }
   }
-  
+
   //No solution
-  delete heuristic;
   return false;
 }
 

@@ -1,4 +1,13 @@
 
+/**
+ * @author: Miguel Alejandro Martín Reyes
+ * email : alu0101209777@ull.edu.es
+ * @github: github.com/miguel-martinr
+ * @date  : 20201110
+ * @description: Clase que implementa un nodo.
+ * 
+ * @keywords: heuristic, A*, finder, AI, nodes, boards, game
+ */
 #include "../include/Node.hpp"
 #include "../include/termcolor/termcolor.hpp"
 
@@ -46,10 +55,10 @@ ostream& operator<<(ostream& os, const Node* n) {
       os << FREE_SYM;
       break;
     case obstacle_:
-      os << termcolor::red << OBSTACLE_SYM << termcolor::reset;
+      os << termcolor::color<169,169,169> << OBSTACLE_SYM << termcolor::reset;
       break;
     case stepped_:
-      os << termcolor::yellow << STEPPED_SYM << termcolor::reset;
+      os << termcolor::blue << STEPPED_SYM << termcolor::reset;
       break;
     case initial_:
       os << termcolor::green << INITIAL_SYM << termcolor::reset;
@@ -69,10 +78,10 @@ ostream& operator<<(ostream& os, const Node& n) {
       os << FREE_SYM;
       break;
     case obstacle_:
-      os << termcolor::red << OBSTACLE_SYM << termcolor::reset;
+      os << termcolor::color<169,169,169> << OBSTACLE_SYM << termcolor::reset;
       break;
     case stepped_:
-      os << termcolor::yellow << STEPPED_SYM << termcolor::reset;
+      os << termcolor::blue << STEPPED_SYM << termcolor::reset;
       break;
     case initial_:
       os << termcolor::green << INITIAL_SYM << termcolor::reset;
