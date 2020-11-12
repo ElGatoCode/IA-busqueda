@@ -6,8 +6,8 @@ Algoritmos actualmente soportados:
 * A* 
 
 Heurísticas actualmente soportadas:
-* Manhattan distance
-* Euclidean  distance
+* ``` manhattan | Manhattan ```   Manhattan distance (default)
+* ```Euclidean | euclidean | Pythagorean | pythagorean ```   Euclidan  distance
 
 
 ## Guía de uso
@@ -30,10 +30,12 @@ Ejecute el programa con las opciones ```bin/search [opciones]```
 ```-o o --obstacles num_obstaculos```   Especifica el número de obstáculos (posiciones aleatorias), por defecto es 0. <br>
 **Nota**: si se especifica un num_obstaculos mayor o igual que el area se colocarán area - 2 obstáculos como máximo.
 
-```-f o --file nombre_fichero```       Especifica un fichero con el tablero a cargar (vea Formatos para más información)
+```-f o --file nombre_fichero```       Especifica un fichero con el tablero a cargar (vea **Formatos** para más información)
 
 ```-fp o --fillp porcentaje```          Especifica el porcentaje de obstáculos del tablero (posiciones aleatorias), por defecto es 0.0. (0 <= porcentaje <= 1) <br>
 **Nota**: si se especifica un porcentaje mayor o igual que 1 se colocarán area - 2 obstáculos como máximo.
+
+```-h o --heuristic heuristica```       Especifica la heurística a utilizar (vea **Heurísticas actualmente soportadas** para más información)
 
 ### Formatos
 
@@ -45,7 +47,7 @@ A . . . .
 . # # # .
 . . . . B
 ```
-**Primera línea:** dos números enteros separados por un espacio en blanco donde el primero (X) representa el número de filas y el segundo (Y) el número de columnas
+**Primera línea:** dos números enteros separados por un espacio en blanco donde el primero (X) representa el número de filas y el segundo (Y) el número de columnas  <br>
 **Siguientes líneas:** cada línea (debe haber al menos X líneas) contendrá al menos Y caracteres separados por espacios en blanco donde:
 + ```A``` La letra A representa el punto inicial (solo puede haber uno)
 + ```B``` La letra B repreenta el punto final (solo puede haber uno)
