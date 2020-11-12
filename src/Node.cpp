@@ -66,6 +66,9 @@ ostream& operator<<(ostream& os, const Node* n) {
     case final_:
       os << termcolor::green << FINAL_SYM << termcolor::reset;
       break;
+    case expanded_:
+      os << termcolor::yellow << EXPANDED_SYM << termcolor::reset;
+      break;
     default:
       os << UNKNOWN_SYM;
   }
@@ -88,6 +91,9 @@ ostream& operator<<(ostream& os, const Node& n) {
       break;
     case final_:
       os << termcolor::green << FINAL_SYM << termcolor::reset;
+      break;
+    case expanded_:
+      os << termcolor::yellow << EXPANDED_SYM << termcolor::reset;
       break;
     default:
       os << UNKNOWN_SYM;

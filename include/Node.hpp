@@ -13,7 +13,7 @@
 
 using namespace std;
 
-enum node_type {free_, obstacle_, stepped_, initial_, final_};
+enum node_type {free_, obstacle_, stepped_, initial_, final_, expanded_,};
 
 const string FREE_SYM = "·";
 const string OBSTACLE_SYM = "█";
@@ -21,6 +21,7 @@ const string STEPPED_SYM = "X";
 const string INITIAL_SYM = "A";
 const string FINAL_SYM = "B";
 const string UNKNOWN_SYM = "?";
+const string EXPANDED_SYM = "E";
 
 // Símbolos para cargar desde fichero
 const string FREE_IN_SYM = FREE_SYM;
@@ -29,6 +30,7 @@ const string STEPPED_IN_SYM = STEPPED_SYM;
 const string INITIAL_IN_SYM = INITIAL_SYM;
 const string FINAL_IN_SYM = FINAL_SYM;
 const string UNKNOWN_IN_SYM = UNKNOWN_SYM;
+const string EXPANDED_IN_SYM = EXPANDED_SYM;
 
 class Node {
  public:
