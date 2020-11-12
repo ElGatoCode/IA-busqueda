@@ -53,5 +53,3 @@ A . . . .
 + ```B``` La letra B repreenta el punto final (solo puede haber uno)
 + ```.``` El caracter punto representa un espacio libre
 + ```#``` El caracter 'almohadilla' representa un obstáculo
-
-
