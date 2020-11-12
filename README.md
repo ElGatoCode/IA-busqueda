@@ -7,6 +7,7 @@ Algoritmos actualmente soportados:
 
 Heurísticas actualmente soportadas:
 * Manhattan distance
+* Euclidean  distance
 
 
 ## Guía de uso
@@ -26,12 +27,12 @@ Ejecute el programa con las opciones ```bin/search [opciones]```
 
 ```-c o --cols num_columnas```          Especifica el número de columnas, por defecto es 75
 
-```-o o --obstacles num_obstaculos```   Especifica el número de obstáculos (posiciones aleatorias), por defecto es 0. 
+```-o o --obstacles num_obstaculos```   Especifica el número de obstáculos (posiciones aleatorias), por defecto es 0. <br>
 **Nota**: si se especifica un num_obstaculos mayor o igual que el area se colocarán area - 2 obstáculos como máximo.
 
 ```-f o --file nombre_fichero```       Especifica un fichero con el tablero a cargar (vea Formatos para más información)
 
-```-fp o --fillp porcentaje```          Especifica el porcentaje de obstáculos del tablero (posiciones aleatorias), por defecto es 0.0. (0 <= porcentaje <= 1) 
+```-fp o --fillp porcentaje```          Especifica el porcentaje de obstáculos del tablero (posiciones aleatorias), por defecto es 0.0. (0 <= porcentaje <= 1) <br>
 **Nota**: si se especifica un porcentaje mayor o igual que 1 se colocarán area - 2 obstáculos como máximo.
 
 ### Formatos
