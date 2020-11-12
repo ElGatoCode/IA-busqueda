@@ -7,6 +7,7 @@ Algoritmos actualmente soportados:
 
 Heurísticas actualmente soportadas:
 * Manhattan distance
+* Euclidean  distance
 
 
 ## Guía de uso
