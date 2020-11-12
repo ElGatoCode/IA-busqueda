@@ -1,6 +1,6 @@
 # Inteligencia Artificial - Búsquedas
 ##### Miguel Martín 
-##### alu0101209777@ull.edu.es
+##### alu0101209777@ull.edu.es 
 Implementación de algoritmos de búsquedas informadas.
 Algoritmos actualmente soportados:
 * A* 
@@ -53,5 +53,3 @@ A . . . .
 + ```B``` La letra B repreenta el punto final (solo puede haber uno)
 + ```.``` El caracter punto representa un espacio libre
 + ```#``` El caracter 'almohadilla' representa un obstáculo
-
-
