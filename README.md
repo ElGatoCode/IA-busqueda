@@ -1,6 +1,6 @@
 # Inteligencia Artificial - Búsquedas
 ##### Miguel Martín 
-##### alu0101209777@ull.edu.es
+##### alu0101209777@ull.edu.es 
 Implementación de algoritmos de búsquedas informadas.
 Algoritmos actualmente soportados:
 * A* 
