@@ -76,6 +76,10 @@ Node& Board::get_node_at(int row, int col) const {
   return grid_->at(row,col);
 }
 
+Node& Board::get_node_at(coordinates P) const {
+  return grid_->at(P.row, P.col);
+}
+
 Node* Board::get_ptr_at(int row, int col) {
   assert(grid_->is_good_pos(row,col));
   vector<vector<Node>>::iterator it = grid_->grid_.begin() + row;
@@ -83,8 +87,11 @@ Node* Board::get_ptr_at(int row, int col) {
 }
 
 void Board::set_obstacle_at(int row, int col) {
-  get_node_at(row,col).type_ = obstacle_;
-  num_of_obstacles_++;
+  node_type current_type = get_node_at(row, col).type_;
+  if ( current_type != obstacle_ && current_type != initial_ && current_type != final_) {
+    get_node_at(row,col).type_ = obstacle_;
+    num_of_obstacles_++;
+  }
 }
 
 void Board::set_stepped_at(int row, int col) {
@@ -93,7 +100,7 @@ void Board::set_stepped_at(int row, int col) {
   get_node_at(row,col).type_ = stepped_;
 }
 
-vector<Node*> Board::get_neighbors_at(int row, int col) {
+vector<Node*> Board::get_neighbors_of(int row, int col) {
   vector<Node*> neighbors;
   //up 
   if(grid_->is_good_pos(row-1,col) && get_node_at(row-1,col).type_ != obstacle_) 
@@ -146,12 +153,6 @@ void Board::load_board(istream& is) {
 }
 
 
-// void Board::resize(int rows, int cols) {
-//   grid_->resize(rows, cols);
-// }
-
-
-
 
 void Board::set_init_point(int row, int col) {
   if(get_node_at(row,col).type_ != final_) {
@@ -192,9 +193,7 @@ void Board::fill_random_obstacles(int num_of) {
   while (num_of_obstacles() < num_of ) {
     row = rand() % num_of_rows();
     col = rand() % num_of_cols(); 
-    node_type current_type = get_node_at(row,col).type_;
-    if (current_type == free_ || current_type == stepped_)
-        set_obstacle_at(row, col); 
+    set_obstacle_at(row, col); 
   }
 }
 

@@ -73,7 +73,7 @@ bool Finder::find_path(coordinates start_pos, coordinates goal_pos, Heuristic* h
     m->is_closed_ = true;
     closed_list_.push_back(m);
 
-    neighbors = board_->get_neighbors_at(m->row_, m->col_);
+    neighbors = board_->get_neighbors_of(m->row_, m->col_);
     for (auto n : neighbors) {
       if(n->is_closed_)
         continue;

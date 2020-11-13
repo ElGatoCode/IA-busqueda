@@ -43,19 +43,19 @@ class Board {
    bool is_obstacle_at(int row, int col);
    void set_obstacle_at(int row, int col);
    void set_stepped_at(int row, int col);
-   vector<Node*> get_neighbors_at(int row, int col);
 
+
+   vector<Node*> get_neighbors_of(int row, int col);
    Node& get_node_at(int row, int col);
    Node& get_node_at(int row, int col) const;
+   Node& get_node_at(coordinates P) const;
    Node* get_ptr_at(int row, int col);
 
 
    Board& operator=(const Board& board);
    void load_board(istream& is = cin);
 
-  //  int num_of_stepped(void) const;
-  //  int num_of_free(void) const;
-  //  int cells_on_this_state(cell_state state) const;
+
 
 
    
