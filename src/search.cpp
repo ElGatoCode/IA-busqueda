@@ -227,10 +227,13 @@ int main(int argc, char* argv[]) {
     
     if (start_search != 'n' && start_search != 'N') {
       Finder finder(&parking_lot);
-      if (finder.find_path(A, B, heuristic))
+      if (finder.find_path(A, B, heuristic)) {
         cout << endl << parking_lot << endl;
-        else
-        cout << endl << "Sin solución" << endl;
+	cout << termcolor::green << "Nodos expandidos: " << termcolor::reset
+	     << finder.closed_list().size() << endl;
+      }	else {
+	cout << endl << "Sin solución" << endl;
+      }
     }
   }
 
