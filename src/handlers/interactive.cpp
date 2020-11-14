@@ -83,7 +83,7 @@ void interactive(void) {
       cout << endl;
       for (int i = 0; i < num_of_obstacles; i++) {
         cout << input_names_color << "  Introduzca las coordenadas del\n"
-            << "obstáculo " << i + 1 << " separadas por un espacio en blanco > "; cin >> row >> col;
+            << "  obstáculo " << i + 1 << " separadas por un espacio en blanco > "; cin >> row >> col;
         parking_lot.set_obstacle_at(row,col);
       }
       cout << reset;
@@ -115,10 +115,10 @@ void interactive(void) {
       Finder finder(&parking_lot);
       if (finder.a_star(A, B, heuristic)) {
         cout << endl << parking_lot << endl;
-        cout << sub_title_color << "Coste del camino : " << reset << parking_lot.get_node_at(B).g_ << endl;
-        cout << sub_title_color << "Nodos expandidos : " << reset << finder.closed_list().size() << endl;
-        cout << sub_title_color << "\n  Tiempo de búsqueda  : " << finder.search_time() << " segundos " << reset << endl;
-
+        cout << sub_title_color << "\n  Costo de la solución: " << reset << parking_lot.get_node_at(B).g_;
+        cout << sub_title_color << "\n  Nodos expandidos    : " << reset << finder.closed_list().size();
+        cout << sub_title_color << "\n  Tiempo de búsqueda  : " << reset << finder.search_time() << " segundos ";
+        cout << endl;
       } else {
         cout << endl << sub_title_color << "Sin solución" << reset << endl;
       }
