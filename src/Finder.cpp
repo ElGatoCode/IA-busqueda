@@ -26,7 +26,7 @@ vector<Node*> Finder::closed_list(void) {
   return closed_list_;
 }
 
-bool Finder::find_path(coordinates start_pos, coordinates goal_pos, Heuristic* heuristic) { // A* search
+bool Finder::a_star(coordinates start_pos, coordinates goal_pos, Heuristic* heuristic) { // A* search
   if (board_ == nullptr)
     return false;
   

@@ -62,8 +62,9 @@ class Board {
 
 
    void set_init_point(int row, int col);
+   void set_init_point(coordinates A);
    void set_final_point(int row, int col);
-
+   void set_final_point(coordinates B);
 
 
   /**

@@ -23,7 +23,7 @@ class Finder {
    ~Finder(void);
 
   
-   bool find_path(coordinates start_pos, coordinates goal_pos, Heuristic* heuristic);
+   bool a_star(coordinates start_pos, coordinates goal_pos, Heuristic* heuristic);
    void draw_path(Node* goal);
    vector<Node*> closed_list(void);
 

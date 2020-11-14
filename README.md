@@ -73,7 +73,11 @@ Ejecute el programa con las opciones ```bin/search [opciones]```
 
 ```-h o --heuristic heuristica``` Especifica la heurística a utilizar (vea [Heurísticas](#heuristicas) para más información)
 
-  
+```--coord.a row col``` Especifica las coordenadas del punto inicial (row, col), por defecto son (0, 0)
+
+```--coord.b row col``` Especifica las coordenadas del punto final (row, col), por defecto son (rows -1, cols -1)
+
+```--no-print``` No imprime el tablero. Por defecto se imprime el tablero sin solución y posteriormente el tablero con la solución (si la hay).
 
 ### Formatos
 

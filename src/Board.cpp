@@ -164,6 +164,10 @@ void Board::set_init_point(int row, int col) {
   } 
 }
 
+void Board::set_init_point(coordinates A) {
+  set_init_point(A.row, A.col);
+}
+
 void Board::set_final_point(int row, int col) {
   if(get_node_at(row,col).type_ != initial_) {
     if(grid_->is_good_pos(final_point_.row, final_point_.col))
@@ -172,6 +176,10 @@ void Board::set_final_point(int row, int col) {
     final_point_.row = row;
     final_point_.col = col;
   } 
+}
+
+void Board::set_final_point(coordinates B) {
+  set_final_point(B.row, B.col);
 }
 
 
