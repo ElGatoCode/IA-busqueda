@@ -2,17 +2,18 @@
 #include <regex>
 
 void help(void) {
-  cout << "  Opciones: \n\n" 
-       << "-r o --rows num_filas Especifica el número de filas, por defecto es 75\n"
-       << "-c o --cols num_columnas Especifica el número de columnas, por defecto es 75\n"
-       << "-o o --obstacles num_obstaculos Especifica el número de obstáculos (posiciones aleatorias), por defecto es 0. \n"
-       << "Nota: si se especifica un num_obstaculos mayor o igual que el área se colocarán area - 2 obstáculos como máximo. \n"
-       << "-f o --file nombre_fichero Especifica un fichero con el tablero a cargar (vea [Formatos](#formatos) para más información) \n"
-       << "-fp o --fillp porcentaje Especifica el porcentaje de obstáculos del tablero (posiciones aleatorias), por defecto es 0.0. (0 <= porcentaje <= 1) \n"
-       << "Nota: si se especifica un porcentaje mayor o igual que 1 se colocarán area - 2 obstáculos como máximo. \n"
-       << "-h o --heuristic heuristica Especifica la heurística a utilizar (vea [Heurísticas](#heuristicas) para más información) \n"
-       << "--coord.a row col Especifica las coordenadas del punto inicial (row, col), por defecto son (0, 0) \n"
-       << "--coord.b row col Especifica las coordenadas del punto final (row, col), por defecto son (rows -1, cols -1) \n";
+  cout << "Uso: \n  bin/search [opciones]\n\n"
+       << "Opciones: \n\n" 
+       << "  -r o --rows num_filas           Especifica el número de filas, por defecto es 75\n"
+       << "  -c o --cols num_columnas        Especifica el número de columnas, por defecto es 75\n"
+       << "  -o o --obstacles num_obstaculos Especifica el número de obstáculos (posiciones aleatorias), por defecto es 0. \n"
+       << "                                  Nota: si se especifica un num_obstaculos mayor o igual que el área se colocarán area - 2 obstáculos como máximo. \n"
+       << "  -f o --file nombre_fichero      Especifica un fichero con el tablero a cargar (vea [Formatos](#formatos) para más información) \n"
+       << "  -fp o --fillp porcentaje        Especifica el porcentaje de obstáculos del tablero (posiciones aleatorias), por defecto es 0.0. (0 <= porcentaje <= 1) \n"
+       << "                                  Nota: si se especifica un porcentaje mayor o igual que 1 se colocarán area - 2 obstáculos como máximo. \n"
+       << "  -h o --heuristic heuristica     Especifica la heurística a utilizar (vea [Heurísticas](#heuristicas) para más información) \n"
+       << "  --coord.a row col               Especifica las coordenadas del punto inicial (row, col), por defecto son (0, 0) \n"
+       << "  --coord.b row col               Especifica las coordenadas del punto final (row, col), por defecto son (rows -1, cols -1) \n";
 }
 
 void cmd_line(vector<string> args) {
@@ -37,6 +38,10 @@ void cmd_line(vector<string> args) {
     heuristic_name = args[++i];
     else if (args[i] == "--no-print")
     print = false;
+    else if (args[i] == "--help") {
+    help();
+    return;
+    } 
     else if (args[i] == "--coord.a" || args[i] == "--coord.A") {
       int rowind = ++i;
       int colwind = ++i;
