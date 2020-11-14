@@ -14,6 +14,7 @@
 
 #include <queue>
 #include <string>
+#include <ctime>
 
 
 
@@ -26,8 +27,11 @@ class Finder {
    bool a_star(coordinates start_pos, coordinates goal_pos, Heuristic* heuristic);
    void draw_path(Node* goal);
    vector<Node*> closed_list(void);
+   double search_time(void);
+   string time(void);
 
  private:
    Board* board_;
    vector<Node*> closed_list_;
+   long double search_time_;
 };

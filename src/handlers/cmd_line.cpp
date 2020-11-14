@@ -52,6 +52,7 @@ void cmd_line(vector<string> args) {
     file_name = args[++i];
     }
     else if (args[i] == "-fp" || args[i] == "--fillp") {
+    by_percentage = true;
     percentage = stof(args[++i]);
     percentage = abs(percentage);
     percentage > 1 ? percentage = 1 : true;
@@ -71,7 +72,7 @@ void cmd_line(vector<string> args) {
     parking_lot.load_board(inputf);
     A = parking_lot.init_point();
     B = parking_lot.final_point();
-    
+
     inputf.close();
   } else {
 
@@ -110,6 +111,7 @@ void cmd_line(vector<string> args) {
       cout << parking_lot << endl;
     cout << sub_title_color << "\n  Costo de la solución: " << parking_lot.get_node_at(B).g_ << reset << endl;
     cout << sub_title_color << "\n  Nodos expandidos    : " << finder.closed_list().size() << reset << endl;
+    cout << sub_title_color << "\n  Tiempo de búsqueda  : " << finder.search_time() << " segundos " << reset << endl;
   } else {
     cout << error_color << "\n  No hay solución :(" << reset << endl;
   }

@@ -117,6 +117,7 @@ void interactive(void) {
         cout << endl << parking_lot << endl;
         cout << sub_title_color << "Coste del camino : " << reset << parking_lot.get_node_at(B).g_ << endl;
         cout << sub_title_color << "Nodos expandidos : " << reset << finder.closed_list().size() << endl;
+        cout << sub_title_color << "\n  Tiempo de búsqueda  : " << finder.search_time() << " segundos " << reset << endl;
 
       } else {
         cout << endl << sub_title_color << "Sin solución" << reset << endl;

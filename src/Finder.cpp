@@ -12,14 +12,24 @@
 #include <list>
 
 
+
 using namespace std;
 
 Finder::Finder(Board* board) {
+  search_time_ = 0;
   board_ = board;
 }
 
 Finder::~Finder(void) {
 
+}
+
+string Finder::time(void) {
+  return string();
+}
+
+double Finder::search_time(void) {
+  return search_time_ / CLOCKS_PER_SEC;
 }
 
 vector<Node*> Finder::closed_list(void) {
@@ -39,7 +49,7 @@ bool Finder::a_star(coordinates start_pos, coordinates goal_pos, Heuristic* heur
   if (heuristic == nullptr)
     Heuristic* heuristic = new Manhattan();
 
-
+  clock_t t0 = clock();
 
   list<Node*> open_list;
 
@@ -65,6 +75,7 @@ bool Finder::a_star(coordinates start_pos, coordinates goal_pos, Heuristic* heur
 
     if (m == goal) {
       draw_path(m);
+      search_time_ = (long double)(clock() - t0);
       return true;
     }
 
@@ -94,6 +105,7 @@ bool Finder::a_star(coordinates start_pos, coordinates goal_pos, Heuristic* heur
   }
 
   //No solution
+  search_time_ = (long double)(clock() - t0);
   return false;
 }
 
