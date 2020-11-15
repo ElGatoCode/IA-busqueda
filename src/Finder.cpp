@@ -36,7 +36,9 @@ vector<Node*> Finder::closed_list(void) {
   return closed_list_;
 }
 
-bool Finder::a_star(coordinates start_pos, coordinates goal_pos, Heuristic* heuristic) { // A* search
+
+// ALGORITMO A*
+bool Finder::a_star(coordinates start_pos, coordinates goal_pos, Heuristic* heuristic) {
   if (board_ == nullptr)
     return false;
   

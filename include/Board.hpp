@@ -92,6 +92,7 @@ class Board {
  private:
 
    Matrix<Node>* grid_;
+   
    int num_of_obstacles_; 
    coordinates init_point_;
    coordinates final_point_;

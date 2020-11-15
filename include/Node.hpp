@@ -38,14 +38,14 @@ class Node {
 
    bool operator==(Node n);
    Node& operator=(const Node& n);
-   int row_;
-   int col_;
-   double f_; //Costo estimado desde nodo inicial a nodo objetivo (g(n) + h(n))
-   double h_; //Costo estimado desde este nodo al nodo objetivo
-   double g_; //Coste desde el nodo inicial a este nodo
-   node_type type_;
-   bool is_closed_;
-   bool is_frontier_;
+   int row_;  // Fila
+   int col_;  // Columna
+   double f_; // Costo estimado desde nodo inicial a nodo objetivo (g(n) + h(n))
+   double h_; // Costo estimado desde este nodo al nodo objetivo
+   double g_; // Coste desde el nodo inicial a este nodo
+   node_type type_; // Tipo 
+   bool is_closed_; // Está en closed_list?
+   bool is_frontier_; // Está en open_list?
 
 
    //ToDo: method char get_sym(type)

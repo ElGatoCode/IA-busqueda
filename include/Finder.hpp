@@ -32,6 +32,6 @@ class Finder {
 
  private:
    Board* board_;
-   vector<Node*> closed_list_;
-   long double search_time_;
+   vector<Node*> closed_list_; // Punteros a nodos que forman parte de la solución
+   long double search_time_;   // Nº de ciclos que consumió la última búsqueda
 };

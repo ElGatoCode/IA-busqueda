@@ -114,14 +114,15 @@ void interactive(void) {
     if (start_search == 's' || start_search == 'S') {
       Finder finder(&parking_lot);
       if (finder.a_star(A, B, heuristic)) {
-        cout << endl << parking_lot << endl;
-        cout << sub_title_color << "\n  Costo de la solución: " << reset << parking_lot.get_node_at(B).g_;
-        cout << sub_title_color << "\n  Nodos expandidos    : " << reset << finder.closed_list().size();
-        cout << sub_title_color << "\n  Tiempo de búsqueda  : " << reset << finder.search_time() << " segundos ";
-        cout << endl;
+        cout << parking_lot << endl;
+        cout << sub_title_color << "\n  Longitud camino mínimo : " << reset << parking_lot.get_node_at(B).g_ << endl;
       } else {
-        cout << endl << sub_title_color << "Sin solución" << reset << endl;
+        cout << error_color << "\n  No hay solución :(" << reset << endl;
       }
+      cout << endl;
+      cout << sub_title_color << "\n  Nodos expandidos       : " << reset << finder.closed_list().size();
+      cout << sub_title_color << "\n  Tiempo de búsqueda     : " << reset << finder.search_time() << " segundos ";
+      cout << endl;
     }
   }
 }

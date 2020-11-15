@@ -13,7 +13,9 @@ void help(void) {
        << "                                  Nota: si se especifica un porcentaje mayor o igual que 1 se colocarán area - 2 obstáculos como máximo. \n"
        << "  -h o --heuristic heuristica     Especifica la heurística a utilizar (vea [Heurísticas](#heuristicas) para más información) \n"
        << "  --coord.a row col               Especifica las coordenadas del punto inicial (row, col), por defecto son (0, 0) \n"
-       << "  --coord.b row col                Especifica las coordenadas del punto final (row, col), por defecto son (rows -1, cols -1) \n";
+       << "  --coord.b row col               Especifica las coordenadas del punto final (row, col), por defecto son (rows -1, cols -1) \n"
+       << "  --no-print                      No se imprime el tablero \n"
+       << "  --help                          Imprime ayuda\n\n";
 }
 
 void cmd_line(vector<string> args) {
@@ -114,13 +116,14 @@ void cmd_line(vector<string> args) {
   if (finder.a_star(A, B, heuristic)) {
     if (print)
       cout << parking_lot << endl;
-    cout << sub_title_color << "\n  Costo de la solución: " << reset << parking_lot.get_node_at(B).g_;
-    cout << sub_title_color << "\n  Nodos expandidos    : " << reset << finder.closed_list().size();
-    cout << sub_title_color << "\n  Tiempo de búsqueda  : " << reset << finder.search_time() << " segundos ";
-    cout << endl;
+    cout << sub_title_color << "\n  Longitud camino mínimo : " << reset << parking_lot.get_node_at(B).g_ << endl;
   } else {
     cout << error_color << "\n  No hay solución :(" << reset << endl;
   }
+    cout << endl;
+    cout << sub_title_color << "\n  Nodos expandidos       : " << reset << finder.closed_list().size();
+    cout << sub_title_color << "\n  Tiempo de búsqueda     : " << reset << finder.search_time() << " segundos ";
+    cout << endl;
 }
 
 

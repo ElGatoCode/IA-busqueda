@@ -83,7 +83,7 @@ Ejecute el programa con las opciones ```bin/search [opciones]```
 
   
 
-##### Fichero con tablero
+##### Fichero con tablero de entrada
 
 Ejemplo:
 
@@ -91,11 +91,11 @@ Ejemplo:
 
 3 5
 
-A . . . .
+A - - - -
 
-. # # # .
+- # # # -
 
-. . . . B
+- - - - B
 
 ```
 
@@ -107,6 +107,6 @@ A . . . .
 
 +  ```B``` La letra B repreenta el punto final (solo puede haber uno)
 
-+  ```.``` El caracter punto representa un espacio libre
++  ```-``` El caracter guión representa un espacio libre
 
 +  ```#``` El caracter 'almohadilla' representa un obstáculo

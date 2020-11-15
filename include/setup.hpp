@@ -1,3 +1,6 @@
+/**
+ * Este fichero se utiliza para definir los 'estilos' para imprimir texto
+ */
 #pragma once
 
 #include "termcolor/termcolor.hpp"
