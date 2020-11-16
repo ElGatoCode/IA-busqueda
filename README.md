@@ -35,11 +35,11 @@ Implementación de algoritmos de búsquedas informadas.
 
 Hay dos formas de ejecutar y pasar los parámetros al programa:
 
-##### Modo interactivo
+#### Modo interactivo
 
 Ejecute el programa sin pasar ningún argumento: ```bin/search``` y este solicitará todos los parámetros necesarios: dimensiones del tablero, coordenadas del punto inicial y final, número de obstáculos, posición de los mismos, etc...
 
-##### Línea de comandos
+#### Línea de comandos
 
 Ejecute el programa con las opciones ```bin/search [opciones]```
 
