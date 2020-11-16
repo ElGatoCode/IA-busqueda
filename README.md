@@ -33,7 +33,7 @@ Implementación de algoritmos de búsquedas informadas.
 
 ### Ejecución
 
-Hay tres formas de ejecutar y pasar los parámetros al programa:
+Hay dos formas de ejecutar y pasar los parámetros al programa:
 
 ##### Modo interactivo
 
