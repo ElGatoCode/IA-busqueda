@@ -71,7 +71,7 @@ Ejecute el programa con las opciones ```bin/search [opciones]```
 
   
 
-```-h o --heuristic heuristica``` Especifica la heurística a utilizar (vea [Heurísticas](#heuristicas) para más información)
+```-h o --heuristic heuristica``` Especifica la heurística a utilizar (vea [Heurísticas](#heurísticas) para más información)
 
 ```--coord.a row col``` Especifica las coordenadas del punto inicial (row, col), por defecto son (0, 0)
 
